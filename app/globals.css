@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --cookie-banner-height: 0px;
+  --floating-control-gap: 1rem;
+  --whatsapp-button-size: 3.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: theme("colors.bg");
+  color: theme("colors.ink.DEFAULT");
+  overflow-x: hidden;
+  padding-bottom: var(--cookie-banner-height);
+}
+
+::selection {
+  background: color-mix(in srgb, theme("colors.violet.DEFAULT") 35%, transparent);
+  color: theme("colors.ink.DEFAULT");
+}
+
+[lang="ar"] {
+  --font-space-grotesk: var(--font-noto-arabic);
+  --font-inter: var(--font-noto-arabic);
+}
+
+[lang="ar"] body,
+[lang="ar"] body * {
+  letter-spacing: normal !important;
+}
+
+[lang="ar"] body,
+[lang="ar"] .type-body,
+[lang="ar"] .type-lead {
+  line-height: 1.8;
+}
+
+/* Signature element: the "facet cut" — a clipped corner echoing a cut gem,
+   used instead of generic rounded-rect cards throughout the site. */
+.facet,
+.facet-sm {
+  --facet-cut: 20px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--facet-cut)) 0,
+    100% var(--facet-cut),
+    100% 100%,
+    var(--facet-cut) 100%,
+    0 calc(100% - var(--facet-cut))
+  );
+}
+
+.facet-sm {
+  --facet-cut: 12px;
+}
+
+.facet-border {
+  position: relative;
+}
+
+.facet-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--facet-cut, 20px)) 0,
+    100% var(--facet-cut, 20px),
+    100% 100%,
+    var(--facet-cut, 20px) 100%,
+    0 calc(100% - var(--facet-cut, 20px))
+  );
+  background: linear-gradient(135deg, theme("colors.border-hover"), theme("colors.border") 40%, theme("colors.border") 100%);
+  -webkit-mask:
+    linear-gradient(theme("colors.white") 0 0) content-box,
+    linear-gradient(theme("colors.white") 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.facet-border:hover::before {
+  background: linear-gradient(135deg, theme("colors.violet.DEFAULT"), theme("colors.teal.DEFAULT") 100%);
+}
+
+.carousel-button:disabled::before,
+.carousel-button:disabled:hover::before {
+  background: linear-gradient(135deg, theme("colors.border-hover"), theme("colors.border") 40%, theme("colors.border") 100%);
+}
+
+/* Mirror facet cuts for RTL (Arabic) */
+[dir="rtl"] .facet,
+[dir="rtl"] .facet-sm {
+  clip-path: polygon(
+    var(--facet-cut) 0,
+    100% 0,
+    100% calc(100% - var(--facet-cut)),
+    calc(100% - var(--facet-cut)) 100%,
+    0 100%,
+    0 var(--facet-cut)
+  );
+}
+
+[dir="rtl"] .facet-border::before {
+  clip-path: polygon(
+    var(--facet-cut, 20px) 0,
+    100% 0,
+    100% calc(100% - var(--facet-cut, 20px)),
+    calc(100% - var(--facet-cut, 20px)) 100%,
+    0 100%,
+    0 var(--facet-cut, 20px)
+  );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-page {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.type-hero {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.type-section-title {
+  font-size: 1.875rem;
+  line-height: 1.15;
+}
+
+.type-card-title {
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.type-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.type-lead {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.type-button {
+  font-size: 0.9375rem;
+  line-height: 1;
+}
+
+.type-small {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .type-hero {
+    font-size: 4.5rem;
+  }
+
+  .type-section-title {
+    font-size: 2.75rem;
+  }
+
+  .type-card-title {
+    font-size: 1.25rem;
+  }
+
+  .type-body {
+    font-size: 1rem;
+  }
+
+  .type-lead {
+    font-size: 1.1875rem;
+  }
+
+  .type-button {
+    font-size: 1rem;
+  }
+
+  .type-small {
+    font-size: 0.875rem;
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 400ms linear,
+    transform 400ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-reveal.is-visible {
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid theme("colors.violet.DEFAULT");
+  outline-offset: 2px;
+}
+
+.whatsapp-button {
+  bottom: calc(var(--cookie-banner-height) + var(--floating-control-gap));
+}
+
+.scroll-to-top-button {
+  bottom: calc(
+    var(--cookie-banner-height) +
+    var(--floating-control-gap) +
+    var(--whatsapp-button-size) +
+    var(--floating-control-gap)
+  );
+}
+
+/* Skip-to-content link: off-canvas until keyboard-focused */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-group:hover .marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+}
+
+/* Embla carousel */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}

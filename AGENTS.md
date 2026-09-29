@@ -1,0 +1,1 @@
+Before any UI change, read DESIGN.md and follow it. Verify results in a browser at 375px and 1440px before reporting done.

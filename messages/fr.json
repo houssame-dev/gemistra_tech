@@ -1,0 +1,424 @@
+{
+  "metadata": {
+    "title": "Gemistra Tech — SaaS, apps mobiles, automatisation IA et SEO",
+    "description": "Gemistra Tech conçoit et développe des plateformes SaaS, des apps mobiles, de l'automatisation IA, des chatbots et du SEO pour les entreprises au Maroc et ailleurs.",
+    "ogDescription": "SaaS, apps mobiles, automatisation IA et SEO — construit depuis le Maroc, pour le monde.",
+    "schemaCity": "Casablanca",
+    "schemaRegion": "Casablanca-Settat",
+    "schemaContactType": "Service client"
+  },
+  "common": {
+    "brandName": "Gemistra Tech",
+    "contactEmail": "contact@gemistratech.com",
+    "contactPhone": "+212 600 000 000"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal"
+  },
+  "nav": {
+    "services": "Services",
+    "whyUs": "Pourquoi Gemistra Tech",
+    "process": "Processus",
+    "team": "Équipe",
+    "work": "Réalisations",
+    "contact": "Contact",
+    "startProject": "Démarrer un projet",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "mainNav": "Navigation principale",
+    "mobileNav": "Navigation mobile",
+    "getInTouch": "Nous contacter",
+    "followUs": "Nous suivre",
+    "backToTop": "Haut de page",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "socialOn": "Gemistra Tech sur {platform}"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "EN",
+    "fr": "FR",
+    "ar": "AR"
+  },
+  "hero": {
+    "badge": "Basés au Maroc, nous construisons pour des clients partout dans le monde",
+    "title": "Des logiciels taillés comme",
+    "titleAccent": "une facette nette.",
+    "description": "Gemistra Tech conçoit et développe des plateformes SaaS, des apps mobiles, de l'automatisation IA et la visibilité search pour les entreprises qui veulent avancer vite sans sacrifier la qualité.",
+    "ctaPrimary": "Démarrer un projet",
+    "ctaSecondary": "Voir ce qu'on construit"
+  },
+  "trustedBy": {
+    "heading": "Ils nous font confiance",
+    "logoAlt": "Logo client {number}"
+  },
+  "services": {
+    "eyebrow": "Ce qu'on fait",
+    "title": "Six façons de vous aider à livrer",
+    "discussService": "Discuter de ce service",
+    "items": [
+      {
+        "name": "Développement SaaS",
+        "tag": "Plateformes B2B & B2C",
+        "description": "Plateformes web full-stack — du premier prototype à un produit que vos clients paient chaque mois.",
+        "deliverables": [
+          "Tableaux de bord multi-tenant et facturation",
+          "Auth, rôles et gestion d'équipe",
+          "Conception d'API et intégrations tierces"
+        ]
+      },
+      {
+        "name": "Développement web",
+        "tag": "Sites marketing & landing pages",
+        "description": "Sites marketing et landing pages qui font bonne impression et transforment les visiteurs en leads.",
+        "deliverables": [
+          "Builds responsives et optimisés en performance",
+          "Configuration CMS pour mises à jour faciles",
+          "Analytics et suivi de conversion"
+        ]
+      },
+      {
+        "name": "Apps mobiles",
+        "tag": "iOS & Android",
+        "description": "Apps iOS et Android au rendu natif, prêtes pour les deux stores sans doubler le travail.",
+        "deliverables": [
+          "Builds React Native cross-platform",
+          "Notifications push et mode hors ligne",
+          "Soumission App Store et Play Store"
+        ]
+      },
+      {
+        "name": "IA & automatisation",
+        "tag": "Intelligence de workflow",
+        "description": "Automatisation de workflows et IA appliquée qui élimine le travail manuel de votre équipe.",
+        "deliverables": [
+          "Intégrations GPT et LLM sur mesure",
+          "Parsing de documents et pipelines de données",
+          "Flux Zapier, Make ou webhooks custom"
+        ]
+      },
+      {
+        "name": "Chatbots & outils intelligents",
+        "tag": "UX conversationnelle",
+        "description": "Outils conversationnels entraînés sur votre activité, connectés aux canaux que vos clients utilisent.",
+        "deliverables": [
+          "Widgets chat site web et WhatsApp",
+          "Assistants entraînés sur votre base de connaissances",
+          "Transfert humain et sync CRM"
+        ]
+      },
+      {
+        "name": "SEO",
+        "tag": "Visibilité organique",
+        "description": "SEO technique et contenu pour que le produit qu'on construit soit aussi celui que les gens trouvent.",
+        "deliverables": [
+          "Audits techniques et corrections Core Web Vitals",
+          "Structure on-page et balisage schema",
+          "Stratégie contenu et mapping mots-clés"
+        ]
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Pourquoi Gemistra Tech",
+    "title": "Une petite équipe, volontairement",
+    "intro": "On est au début — et c'est un avantage. Une petite équipe, c'est moins de relais, des décisions plus rapides, et un fondateur personnellement investi dans votre résultat.",
+    "_placeholder": "PLACEHOLDER : confirmer la période de support de 30 jours avant le lancement.",
+    "points": [
+      {
+        "title": "Vous parlez aux personnes qui construisent",
+        "description": "Pas d'account managers qui relaient les messages. Vous travaillez directement avec le fondateur et les ingénieurs — du kickoff au lancement.",
+        "details": [
+          "Points hebdomadaires avec l'équipe de build",
+          "Canal Slack ou WhatsApp partagé",
+          "Décisions prises en heures, pas en semaines"
+        ]
+      },
+      {
+        "title": "Une stack moderne, pas surchargée",
+        "description": "On choisit les outils adaptés à votre produit — rapides à construire, économiques à faire tourner, faciles à reprendre quand votre équipe grandit.",
+        "details": [
+          "Next.js, TypeScript, Tailwind par défaut",
+          "Hébergement cloud-native sur Vercel ou AWS",
+          "Architecture documentée et extensible"
+        ]
+      },
+      {
+        "stat": "30 jours",
+        "statLabel": "support post-lancement",
+        "title": "On ne disparaît pas après le lancement",
+        "description": "Chaque projet livré inclut une période de support définie — corrections de bugs incluses, sans surcoût. On reste disponible pour questions et ajustements bien après la passation.",
+        "details": [
+          "30 jours de corrections gratuites après le lancement",
+          "Accès direct à la personne qui a construit le projet",
+          "Travail continu disponible sur arrangement séparé"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment on travaille",
+    "title": "De l'appel au lancement",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Appel découverte",
+        "timeframe": "30–45 min",
+        "description": "On discute de ce que vous voulez construire, de votre calendrier et de votre budget — sans frais, sans engagement.",
+        "activities": [
+          "Objectifs, utilisateurs et métriques de succès",
+          "Outils existants et contraintes",
+          "Calendrier et budget approximatifs"
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Périmètre & proposition",
+        "timeframe": "3–5 jours ouvrés",
+        "description": "Vous recevez un découpage clair de ce qu'on construit, dans quel ordre, et à quel prix — par écrit.",
+        "activities": [
+          "Liste de fonctionnalités priorisées",
+          "Calendrier de jalons et échéancier de paiement",
+          "Recommandation de stack technique"
+        ]
+      },
+      {
+        "step": "03",
+        "title": "Construction ouverte",
+        "timeframe": "2–12 semaines",
+        "description": "Points réguliers et aperçus fonctionnels en cours de route — pas de grande révélation à la fin.",
+        "activities": [
+          "Démos hebdomadaires de logiciel fonctionnel",
+          "Mises à jour async sur votre canal préféré",
+          "Environnement de staging testable à tout moment"
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Lancement & support",
+        "timeframe": "1–2 semaines post-lancement",
+        "description": "On livre, on vérifie que ça tient en conditions réelles, et on reste joignables après le lancement.",
+        "activities": [
+          "Déploiement et configuration DNS",
+          "Monitoring et suivi d'erreurs",
+          "Documentation de passation pour votre équipe"
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "Petits aujourd'hui, on grandit avec nos clients",
+    "openPositionLabel": "Poste ouvert",
+    "hiringBadge": "On recrute",
+    "previousLabel": "Membre précédent",
+    "nextLabel": "Membre suivant",
+    "socialOn": "{name} sur {platform}",
+    "members": [
+      {
+        "name": "Houssame Errjem",
+        "role": "Ingénieur logiciel",
+        "bio": "Construit Gemistra Tech depuis Casablanca — obsédé par livrer un logiciel propre.",
+        "initials": "HE",
+        "image": "",
+        "filled": true
+      },
+      {
+        "name": "Ali",
+        "role": "Responsable commercial",
+        "bio": "Connecte les clients aux bonnes solutions digitales et s'assure que tout le monde est aligné.",
+        "initials": "A",
+        "image": "",
+        "filled": true
+      },
+      {
+        "name": "Développeur full-stack",
+        "role": "Bientôt disponible",
+        "bio": "On cherche quelqu'un qui aime construire des systèmes rapides et fiables de bout en bout.",
+        "initials": "?",
+        "image": "",
+        "filled": false
+      },
+      {
+        "name": "Designer UI & UX",
+        "role": "Bientôt disponible",
+        "bio": "On cherche un designer qui rend les interfaces évidentes.",
+        "initials": "?",
+        "image": "",
+        "filled": false
+      },
+      {
+        "name": "Community manager",
+        "role": "Bientôt disponible",
+        "bio": "On cherche quelqu'un qui raconte des histoires captivantes et construit des communautés autour de beaux produits.",
+        "initials": "?",
+        "image": "",
+        "filled": false
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Histoires clients, bientôt",
+    "description": "Les mots des clients pour qui nous livrons arrivent — c'est ici qu'ils trouveront leur place.",
+    "emptyTitle": "Bientôt disponible",
+    "emptyDescription": "On débute — les premiers témoignages de nos clients apparaîtront ici au fil des lancements."
+  },
+  "work": {
+    "title": "Projets qu'on a construits",
+    "viewProject": "Voir le projet",
+    "status": {
+      "Live": "En ligne",
+      "InProgress": "En cours",
+      "ComingSoon": "Bientôt"
+    }
+  },
+  "faq": {
+    "_placeholder": "PLACEHOLDER : relire toutes les réponses de la FAQ avant le lancement.",
+    "title": "Questions fréquentes",
+    "placeholderNote": "Réponses provisoires ci-dessous — à relire et mettre à jour avant la mise en ligne.",
+    "items": [
+      {
+        "question": "Comment fonctionne la tarification ?",
+        "answer": "Chaque projet commence par un appel découverte gratuit. On envoie ensuite une proposition écrite avec un périmètre fixe, un découpage par jalons et un coût total — pas de surprises à l'heure. Pour la suite, on peut mettre en place un forfait mensuel une fois le build initial en ligne."
+      },
+      {
+        "question": "Combien de temps dure un projet typique ?",
+        "answer": "Un site marketing prend généralement 2 à 4 semaines. Un MVP SaaS ou une app mobile tourne plutôt entre 6 et 12 semaines selon le périmètre. On vous donne un calendrier réaliste dans la proposition avant de commencer."
+      },
+      {
+        "question": "Quelle différence entre Développement SaaS et Développement web ?",
+        "answer": "Le développement web couvre les sites marketing et landing pages — contenu, design, capture de leads. Le SaaS, c'est un produit avec comptes utilisateurs, tableaux de bord, facturation et logique backend que les clients utilisent régulièrement. Si les gens se connectent et paient chaque mois, c'est du SaaS."
+      },
+      {
+        "question": "Travaillez-vous avec des clients internationaux ?",
+        "answer": "Oui. On est basés à Casablanca mais travaillons avec des clients au Maroc, en Europe et en Amérique du Nord. Communication en anglais ou français, mises à jour async sur votre canal préféré, appels adaptés à votre fuseau horaire."
+      },
+      {
+        "question": "Quelle stack technique utilisez-vous ?",
+        "answer": "Notre stack par défaut : Next.js, TypeScript et Tailwind CSS pour le web ; React Native pour le mobile ; Node.js ou fonctions serverless pour le backend. On choisit selon les besoins de votre produit — pas selon la tendance de la semaine."
+      },
+      {
+        "question": "Vous faites le design ou seulement le développement ?",
+        "answer": "On gère design UI et ingénierie en interne pour la plupart des projets. Si vous avez déjà des maquettes Figma, on build dessus. Sinon, on design au fil de l'eau — processus lean sans agence intermédiaire."
+      },
+      {
+        "question": "Que se passe-t-il après le lancement ?",
+        "answer": "Chaque projet inclut 30 jours de support post-lancement pour corrections et petits ajustements. Ensuite, on propose des forfaits de maintenance optionnels pour hébergement, mises à jour et nouvelles fonctionnalités."
+      },
+      {
+        "question": "Pouvez-vous intégrer l'IA ou l'automatisation dans un produit existant ?",
+        "answer": "Absolument. IA & automatisation et chatbots sont des services à part, mais on peut aussi les ajouter à des apps existantes — traitement de documents, bots support, automatisation interne, etc. On les scope en modules séparés pour démarrer petit."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Dites-nous ce que vous construisez",
+    "intro": "Envoyez quelques détails sur votre projet et on revient vers vous sous 1 à 2 jours ouvrés.",
+    "reachUs": "Nous joindre",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "locationValue": "Casablanca, Maroc",
+    "followUs": "Nous suivre",
+    "mapTitle": "Localisation Gemistra Tech — Casablanca, Maroc",
+    "sendMessage": "Envoyer un message",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "nom@entreprise.com",
+    "projectTypeLabel": "Type de projet",
+    "projectTypePlaceholder": "Sélectionnez un type de projet",
+    "projectTypes": [
+      "Développement SaaS",
+      "Développement web",
+      "Développement d'applications mobiles",
+      "IA & automatisation",
+      "Chatbots & outils intelligents",
+      "SEO",
+      "Autre"
+    ],
+    "messageLabel": "Détails du projet",
+    "messagePlaceholder": "Que souhaitez-vous construire ?",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi…",
+    "success": "Message envoyé. On revient vers vous bientôt.",
+    "validationError": "Veuillez remplir tous les champs avant d'envoyer.",
+    "nameRequired": "Indiquez votre nom.",
+    "emailRequired": "Indiquez votre adresse e-mail.",
+    "emailInvalid": "Indiquez une adresse e-mail valide.",
+    "projectTypeRequired": "Sélectionnez un type de projet.",
+    "messageRequired": "Décrivez-nous brièvement votre projet.",
+    "serverError": "Un problème est survenu de notre côté — réessayez ou écrivez-nous directement à",
+    "availability": "Nous acceptons actuellement de nouveaux projets",
+    "copyEmail": "Copier l'adresse e-mail",
+    "copied": "Copié !",
+    "socialOn": "Gemistra Tech sur {platform}",
+    "sendAnother": "Envoyer un autre message",
+    "successNote": "Vous préférez l'e-mail ? Écrivez-nous directement à"
+  },
+  "footer": {
+    "tagline": "Casablanca, Maroc — on travaille avec des clients partout.",
+    "quickLinks": "Liens rapides",
+    "services": "Services",
+    "contact": "Contact",
+    "navLabel": "Navigation pied de page",
+    "legalLabel": "Liens légaux",
+    "socialOn": "Gemistra Tech sur {platform}",
+    "rights": "Tous droits réservés.",
+    "copyright": "© {year} Gemistra Tech. Tous droits réservés."
+  },
+  "whatsapp": {
+    "label": "Discuter avec Gemistra Tech sur WhatsApp",
+    "message": "Bonjour Gemistra Tech, j'aimerais discuter d'un projet"
+  },
+  "project": {
+    "backToWork": "Retour aux réalisations",
+    "about": "À propos de ce projet",
+    "services": "Services",
+    "ctaTitle": "Vous voulez quelque chose de similaire ?",
+    "ctaButton": "Démarrer un projet"
+  },
+  "projectData": {
+    "example-project": {
+      "name": "Projet exemple",
+      "category": "SaaS",
+      "summary": "Un bref résumé du projet et du public auquel il s'adresse.",
+      "description": "Remplacez ce texte par une véritable étude de cas dès que votre premier projet sera en ligne : le problème, la solution conçue par Gemistra Tech, les technologies utilisées et les résultats. En attendant, cette entrée montre le rendu du modèle.",
+      "services": ["Développement SaaS", "SEO"]
+    }
+  },
+  "error": {
+    "code": "Erreur",
+    "title": "Un élément a dévié du plan de coupe.",
+    "description": "Une erreur inattendue s'est produite pendant l'affichage de cette page. Veuillez réessayer.",
+    "tryAgain": "Réessayer"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Cette page a eu une facette nette — hors du site.",
+    "description": "Elle n'a jamais existé ou a été déplacée. Retournez à l'accueil, on vous remettra sur la bonne voie.",
+    "backHome": "Retour à l'accueil"
+  },
+  "cookieConsent": {
+    "title": "Cookies",
+    "message": "Nous utilisons des cookies essentiels pour faire fonctionner le site et, facultativement, des analyses pour comprendre son utilisation. Vous pouvez modifier votre choix à tout moment.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "description": "Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous interagissez avec notre site et nos services.",
+    "content1": "Nous collectons des informations personnelles telles que votre nom et votre adresse e-mail lorsque vous soumettez le formulaire de contact. Ces informations servent uniquement à répondre à vos demandes et à fournir nos services.",
+    "content2": "Nous ne vendons pas vos informations personnelles à des tiers. Nous pouvons les partager avec des prestataires qui nous aident pour l'hébergement, l'analyse ou le traitement des paiements, uniquement dans la mesure nécessaire à la fourniture de nos services.",
+    "content3Before": "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Contactez-nous à",
+    "content3After": "pour exercer ces droits ou pour toute question relative à la confidentialité.",
+    "note": "Contenu provisoire — faites relire cette page par un professionnel du droit avant le lancement."
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "description": "Les présentes conditions régissent votre utilisation de notre site web et de nos services.",
+    "content1": "En accédant à notre site ou en l'utilisant, vous acceptez ces conditions. Si vous ne les acceptez pas, veuillez ne pas utiliser notre site.",
+    "content2": "Vous devez avoir au moins 18 ans pour utiliser nos services. Vous vous engagez à fournir des informations exactes, à jour et complètes lors de leur utilisation.",
+    "content3": "Nous pouvons modifier ces conditions à tout moment. Les modifications prennent effet dès leur publication sur cette page ; il vous appartient de les consulter régulièrement.",
+    "note": "Contenu provisoire — faites relire cette page par un professionnel du droit avant le lancement."
+  }
+}

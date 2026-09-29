@@ -1,0 +1,26 @@
+{
+  "name": "Gemistra Tech",
+  "short_name": "Gemistra Tech",
+  "theme_color": "#05060A",
+  "background_color": "#05060A",
+  "display": "standalone",
+  "description": "Gemistra Tech - SaaS, mobile apps, AI automation and SEO for businesses",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
