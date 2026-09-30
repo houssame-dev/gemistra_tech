@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Users, Layers, Shield } from "lucide-react";
+import type { SectionTone } from "@/lib/config";
 
 const icons = [Users, Layers, Shield] as const;
 
@@ -11,14 +12,14 @@ type Point = {
   details: string[];
 };
 
-export default async function WhyUs() {
+export default async function WhyUs({ tone = "surface" }: { tone?: SectionTone }) {
   const t = await getTranslations("whyUs");
   const points = t.raw("points") as Point[];
 
   return (
     <section
       id="why-us"
-      className="flex min-h-screen items-center border-t border-border bg-surface py-16 lg:py-24"
+      className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}
     >
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
@@ -35,7 +36,7 @@ export default async function WhyUs() {
             return (
               <div
                 key={point.title}
-                className={`facet-border facet flex h-full flex-col items-center bg-bg p-6 text-center md:col-span-2 lg:col-span-1 ${
+                className={`facet-border facet flex h-full flex-col items-center p-6 text-center md:col-span-2 lg:col-span-1 ${tone === "bg" ? "bg-surface" : "bg-bg"} ${
                   points.length % 2 === 1 && index === points.length - 1
                     ? "md:col-start-2 lg:col-start-auto"
                     : ""

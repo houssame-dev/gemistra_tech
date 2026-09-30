@@ -24,6 +24,59 @@ async function assertNoOverflow(page, route, width) {
   }
 }
 
+async function verifyLanguageMenu(page, locale, width) {
+  if (width < 1024) {
+    await page.locator('button[aria-controls="mobile-nav"]').click();
+  }
+
+  const trigger = page.locator('button[aria-controls="language-menu"]:visible');
+  await trigger.focus();
+  await trigger.press("Enter");
+  const menu = page.locator('#language-menu:visible');
+  await menu.waitFor();
+
+  const currentOption = menu.locator('[role="menuitemradio"][aria-checked="true"]');
+  await currentOption.waitFor();
+  if (!(await currentOption.evaluate((element) => element === document.activeElement))) {
+    throw new Error(`Current language option was not focused for /${locale} at ${width}px`);
+  }
+
+  await currentOption.press("ArrowDown");
+  const focusedRole = await page.evaluate(() => document.activeElement?.getAttribute("role"));
+  if (focusedRole !== "menuitemradio") {
+    throw new Error(`Arrow-key navigation failed for /${locale} at ${width}px`);
+  }
+
+  const alignment = await page.evaluate((isRtl) => {
+    const button = document.querySelector('button[aria-controls="language-menu"][aria-expanded="true"]');
+    const menuElement = document.querySelector('#language-menu');
+    if (!button || !menuElement) return {aligned: false};
+    const buttonRect = button.getBoundingClientRect();
+    const menuRect = menuElement.getBoundingClientRect();
+    return {
+      aligned: isRtl
+        ? Math.abs(buttonRect.left - menuRect.left) < 2
+        : Math.abs(buttonRect.right - menuRect.right) < 2,
+      buttonLeft: buttonRect.left,
+      buttonRight: buttonRect.right,
+      menuLeft: menuRect.left,
+      menuRight: menuRect.right
+    };
+  }, locale === "ar");
+  if (!alignment.aligned) {
+    throw new Error(`Logical menu alignment failed for /${locale} at ${width}px: ${JSON.stringify(alignment)}`);
+  }
+
+  await page.keyboard.press("Escape");
+  if (await menu.isVisible()) {
+    throw new Error(`Escape did not close the language menu for /${locale} at ${width}px`);
+  }
+
+  if (width < 1024 && await page.locator("#mobile-nav").isVisible()) {
+    await page.locator('button[aria-controls="mobile-nav"]').click();
+  }
+}
+
 try {
   for (const locale of locales) {
     for (const width of widths) {
@@ -48,6 +101,7 @@ try {
       }));
 
       await assertNoOverflow(page, `/${locale}`, width);
+      await verifyLanguageMenu(page, locale, width);
 
       await page.screenshot({
         path: path.join(outputDir, `${locale}-${width}-hero.png`),

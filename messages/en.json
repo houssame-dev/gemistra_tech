@@ -9,6 +9,8 @@
   },
   "common": {
     "brandName": "Gemistra Tech",
+    "brandFirst": "Gemistra",
+    "brandSecond": "Tech",
     "contactEmail": "contact@gemistratech.com",
     "contactPhone": "+212 600 000 000"
   },
@@ -17,7 +19,7 @@
   },
   "nav": {
     "services": "Services",
-    "whyUs": "Why Gemistra Tech",
+    "whyUs": "Why us",
     "process": "Process",
     "team": "Team",
     "work": "Work",
@@ -53,6 +55,12 @@
   },
   "language": {
     "label": "Language",
+    "openMenu": "Choose language",
+    "options": {
+      "en": "English",
+      "fr": "Français",
+      "ar": "العربية"
+    },
     "en": "EN",
     "fr": "FR",
     "ar": "AR"
@@ -61,9 +69,9 @@
     "badge": "Based in Morocco, building for clients worldwide",
     "title": "Software, shaped like",
     "titleAccent": "a clean cut.",
-    "description": "Gemistra Tech designs and builds SaaS platforms, mobile apps, AI automation, and search visibility for businesses that want to move fast without cutting corners.",
+    "description": "We build SaaS, Web & Mobile Apps, AI Automation, chatbots, SEO and Digital Solutions.",
     "ctaPrimary": "Start a project",
-    "ctaSecondary": "See what we build"
+    "ctaSecondary": "Discover"
   },
   "trustedBy": {
     "heading": "Trusted by",
@@ -274,10 +282,16 @@
     ]
   },
   "testimonials": {
-    "title": "Client stories, coming soon",
-    "description": "Real words from the clients we ship for are on the way — this is where they'll live.",
-    "emptyTitle": "Coming soon",
-    "emptyDescription": "We're early — the first testimonials from our clients will appear here as their projects go live."
+    "title": "Client stories",
+    "description": "What clients say about working with Gemistra Tech."
+  },
+  "testimonialData": {
+    "_placeholder": "PLACEHOLDER: replace this sample with an approved client testimonial.",
+    "placeholder-client": {
+      "clientName": "Client name",
+      "roleCompany": "Role · Company",
+      "quote": "A real client testimonial will appear here."
+    }
   },
   "work": {
     "title": "Projects we've built",
@@ -366,8 +380,6 @@
     "messageRequired": "Tell us a little about your project.",
     "serverError": "Something went wrong on our end — please try again or email us directly at",
     "availability": "Currently accepting new projects",
-    "copyEmail": "Copy email address",
-    "copied": "Copied!",
     "socialOn": "Gemistra Tech on {platform}",
     "sendAnother": "Send another message",
     "successNote": "Prefer email? Reach us directly at"

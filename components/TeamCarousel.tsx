@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import Image from "next/image";
 import type { TeamMember } from "./Team";
+import type { SectionTone } from "@/lib/config";
 
 function LinkedinIcon({ size = 18 }: { size?: number }) {
   return (
@@ -36,6 +37,7 @@ type Props = {
   nextLabel: string;
   socials: SocialEntry[][];
   locale: string;
+  tone: SectionTone;
 };
 
 type CarouselButtonProps = {
@@ -71,6 +73,7 @@ export default function TeamCarousel({
   nextLabel,
   socials,
   locale,
+  tone,
 }: Props) {
   const isRtl = locale === "ar";
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -132,7 +135,7 @@ export default function TeamCarousel({
                   className="embla__slide flex h-auto w-team-card shrink-0"
                 >
                   <div
-                    className={`facet relative flex h-full w-full flex-col bg-bg p-6 ${
+                    className={`facet relative flex h-full w-full flex-col p-6 ${tone === "bg" ? "bg-surface" : "bg-bg"} ${
                       member.filled
                         ? "facet-border"
                         : "border border-dashed border-border-hover"
@@ -206,11 +209,11 @@ export default function TeamCarousel({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 start-0 z-10 w-12 bg-gradient-to-r from-surface to-transparent rtl:bg-gradient-to-l md:w-16"
+          className={`pointer-events-none absolute inset-y-0 start-0 z-10 w-12 bg-gradient-to-r to-transparent rtl:bg-gradient-to-l md:w-16 ${tone === "bg" ? "from-bg" : "from-surface"}`}
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 end-0 z-10 w-12 bg-gradient-to-l from-surface to-transparent rtl:bg-gradient-to-r md:w-16"
+          className={`pointer-events-none absolute inset-y-0 end-0 z-10 w-12 bg-gradient-to-l to-transparent rtl:bg-gradient-to-r md:w-16 ${tone === "bg" ? "from-bg" : "from-surface"}`}
         />
 
         <div className="hidden md:block">

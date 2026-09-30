@@ -3,20 +3,21 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import type { SectionTone } from "@/lib/config";
 
 type FaqItem = {
   question: string;
   answer: string;
 };
 
-export default function FAQ() {
+export default function FAQ({ tone = "bg" }: { tone?: SectionTone }) {
   const t = useTranslations("faq");
   // PLACEHOLDER: These FAQ answers come from the translated `faq.items` keys and require owner review before launch.
   const faqs = t.raw("items") as FaqItem[];
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="flex min-h-screen items-center border-t border-border bg-bg py-16 lg:py-24">
+    <section id="faq" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="type-section-title text-balance font-display font-bold tracking-tight text-ink">
@@ -25,7 +26,7 @@ export default function FAQ() {
           <p className="type-small mt-4 text-ink-secondary">{t("placeholderNote")}</p>
         </div>
 
-        <div className="facet-border facet mx-auto mt-12 max-w-2xl divide-y divide-border bg-surface">
+        <div className={`facet-border facet mx-auto mt-12 max-w-2xl divide-y divide-border ${tone === "bg" ? "bg-surface" : "bg-bg"}`}>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const panelId = `faq-panel-${index}`;

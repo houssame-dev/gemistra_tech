@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { SHOW_TRUST_STRIP, type SectionTone } from "@/lib/config";
 
 type Props = {
   params: { locale: string };
@@ -109,6 +110,8 @@ export default async function Home({ params: { locale } }: Props) {
     tMetadata("schemaCity"),
     tMetadata("schemaRegion")
   );
+  const tone = (withTrustStrip: SectionTone, withoutTrustStrip: SectionTone) =>
+    SHOW_TRUST_STRIP ? withTrustStrip : withoutTrustStrip;
 
   return (
     <main id="main-content">
@@ -121,32 +124,34 @@ export default async function Home({ params: { locale } }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Hero />
+      {SHOW_TRUST_STRIP && (
+        <ScrollReveal>
+          <TrustStrip />
+        </ScrollReveal>
+      )}
       <ScrollReveal>
-        <TrustStrip />
+        <Services tone={tone("bg", "surface")} />
       </ScrollReveal>
       <ScrollReveal>
-        <Services />
+        <WhyUs tone={tone("surface", "bg")} />
       </ScrollReveal>
       <ScrollReveal>
-        <WhyUs />
+        <Process tone={tone("bg", "surface")} />
       </ScrollReveal>
       <ScrollReveal>
-        <Process />
+        <Team tone={tone("surface", "bg")} />
       </ScrollReveal>
       <ScrollReveal>
-        <Team />
+        <Testimonials tone={tone("bg", "surface")} />
       </ScrollReveal>
       <ScrollReveal>
-        <Testimonials />
+        <Work tone={tone("surface", "bg")} />
       </ScrollReveal>
       <ScrollReveal>
-        <Work />
+        <FAQ tone={tone("bg", "surface")} />
       </ScrollReveal>
       <ScrollReveal>
-        <FAQ />
-      </ScrollReveal>
-      <ScrollReveal>
-        <Contact />
+        <Contact tone={tone("surface", "bg")} />
       </ScrollReveal>
     </main>
   );

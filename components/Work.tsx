@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Calendar, Folder } from "lucide-react";
 import { projects } from "@/lib/projects";
 import type { Project } from "@/lib/projects";
+import type { SectionTone } from "@/lib/config";
 
 type ProjectCopy = {
   name: string;
@@ -12,12 +13,12 @@ type ProjectCopy = {
   services: string[];
 };
 
-export default async function Work() {
+export default async function Work({ tone = "surface" }: { tone?: SectionTone }) {
   const t = await getTranslations("work");
   const tProjects = await getTranslations("projectData");
 
   return (
-    <section id="work" className="flex min-h-screen items-center border-t border-border bg-surface py-16 lg:py-24">
+    <section id="work" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="type-section-title text-balance font-display font-bold tracking-tight text-ink">
@@ -33,6 +34,7 @@ export default async function Work() {
               copy={tProjects.raw(project.messageKey) as ProjectCopy}
               t={t}
               centerOrphan={projects.length % 2 === 1 && index === projects.length - 1}
+              tone={tone}
             />
           ))}
         </div>
@@ -46,15 +48,17 @@ function ProjectCard({
   copy,
   t,
   centerOrphan,
+  tone,
 }: {
   project: Project;
   copy: ProjectCopy;
   t: Awaited<ReturnType<typeof getTranslations>>;
   centerOrphan: boolean;
+  tone: SectionTone;
 }) {
   return (
     <article
-      className={`facet-border facet flex h-full flex-col overflow-hidden bg-bg sm:col-span-2 ${
+      className={`facet-border facet flex h-full flex-col overflow-hidden sm:col-span-2 ${tone === "bg" ? "bg-surface" : "bg-bg"} ${
         centerOrphan ? "sm:col-start-2 lg:col-start-3" : ""
       }`}
     >

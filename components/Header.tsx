@@ -139,6 +139,14 @@ export default function Header() {
 
     function onKey(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        const target = event.target;
+        if (
+          target instanceof Element &&
+          (target.closest("#language-menu") ||
+            target.closest('[aria-controls="language-menu"][aria-expanded="true"]'))
+        ) {
+          return;
+        }
         event.preventDefault();
         close();
         return;
@@ -229,7 +237,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-75 ease-linear ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-75 ease-linear ${
         scrolled
           ? "border-border/60 bg-bg/80 backdrop-blur"
           : "border-transparent bg-transparent backdrop-blur-none"
@@ -265,7 +273,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3 justify-self-end lg:flex-col lg:items-end lg:gap-1 xl:flex-row xl:items-center xl:gap-3">
-          <LanguageSwitcher compact className="hidden lg:flex" />
+          <LanguageSwitcher variant="dropdown" compact className="hidden lg:block" />
 
           <Link
             href="/#contact"
@@ -296,7 +304,7 @@ export default function Header() {
           className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-border bg-bg lg:hidden"
         >
           <div className="container-page flex flex-1 flex-col py-6">
-            <LanguageSwitcher className="mb-6" />
+            <LanguageSwitcher variant="dropdown" className="mb-6 self-start" />
 
             <div className="flex flex-col gap-1">
               {links.map((link) => (

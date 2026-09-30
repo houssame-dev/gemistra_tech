@@ -9,6 +9,8 @@
   },
   "common": {
     "brandName": "Gemistra Tech",
+    "brandFirst": "Gemistra",
+    "brandSecond": "Tech",
     "contactEmail": "contact@gemistratech.com",
     "contactPhone": "+212 600 000 000"
   },
@@ -17,7 +19,7 @@
   },
   "nav": {
     "services": "الخدمات",
-    "whyUs": "لماذا \u2066Gemistra Tech\u2069",
+    "whyUs": "لماذا نحن",
     "process": "آلية العمل",
     "team": "الفريق",
     "work": "أعمالنا",
@@ -36,6 +38,12 @@
   },
   "language": {
     "label": "اللغة",
+    "openMenu": "اختر اللغة",
+    "options": {
+      "en": "English",
+      "fr": "Français",
+      "ar": "العربية"
+    },
     "en": "EN",
     "fr": "FR",
     "ar": "AR"
@@ -44,9 +52,9 @@
     "badge": "مقرنا المغرب، نبني لعملاء حول العالم",
     "title": "برمجيات مصقولة مثل",
     "titleAccent": "قطعة ألماس دقيقة.",
-    "description": "\u2066Gemistra Tech\u2069 تصمم وتبني منصات SaaS وتطبيقات جوال وأتمتة بالذكاء الاصطناعي وتحسين ظهور البحث للشركات التي تريد التحرك بسرعة دون التضحية بالجودة.",
+    "description": "نبني حلول SaaS وتطبيقات الويب والجوال وأتمتة الذكاء الاصطناعي وروبوتات المحادثة وتحسين محركات البحث والحلول الرقمية.",
     "ctaPrimary": "ابدأ مشروعك",
-    "ctaSecondary": "اكتشف ما نبنيه"
+    "ctaSecondary": "اكتشف"
   },
   "trustedBy": {
     "heading": "يثق بنا",
@@ -257,10 +265,16 @@
     ]
   },
   "testimonials": {
-    "title": "قصص العملاء، قريباً",
-    "description": "كلمات حقيقية من العملاء الذين نعمل معهم في الطريق — هذا المكان مخصص لها.",
-    "emptyTitle": "قريباً",
-    "emptyDescription": "نحن في البداية — ستظهر شهادات عملائنا الأولى هنا مع انطلاق مشاريعهم."
+    "title": "قصص العملاء",
+    "description": "ما يقوله عملاؤنا عن تجربتهم مع \u2066Gemistra Tech\u2069."
+  },
+  "testimonialData": {
+    "_placeholder": "PLACEHOLDER: استبدل هذا المثال بشهادة عميل معتمدة.",
+    "placeholder-client": {
+      "clientName": "اسم العميل",
+      "roleCompany": "المنصب · الشركة",
+      "quote": "ستظهر هنا شهادة حقيقية لأحد العملاء."
+    }
   },
   "work": {
     "title": "مشاريع بنيناها",
@@ -349,8 +363,6 @@
     "messageRequired": "أخبرنا قليلاً عن مشروعك.",
     "serverError": "حدث خطأ من جانبنا — حاول مجدداً أو راسلنا مباشرة على",
     "availability": "نستقبل حالياً مشاريع جديدة",
-    "copyEmail": "نسخ البريد الإلكتروني",
-    "copied": "تم النسخ!",
     "socialOn": "\u2066Gemistra Tech\u2069 على {platform}",
     "sendAnother": "إرسال رسالة أخرى",
     "successNote": "تفضّل البريد الإلكتروني؟ راسلنا مباشرة على"

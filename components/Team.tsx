@@ -1,5 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import TeamCarousel from "./TeamCarousel";
+import type { SectionTone } from "@/lib/config";
 
 export type TeamMember = {
   name: string;
@@ -12,7 +13,7 @@ export type TeamMember = {
 
 type SocialEntry = { platform: string; href: string; ariaLabel: string };
 
-export default async function Team() {
+export default async function Team({ tone = "surface" }: { tone?: SectionTone }) {
   const t = await getTranslations("team");
   const locale = await getLocale();
   const members = t.raw("members") as TeamMember[];
@@ -39,7 +40,7 @@ export default async function Team() {
   );
 
   return (
-    <section id="team" className="flex min-h-screen items-center border-t border-border bg-surface py-16 lg:py-24">
+    <section id="team" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="type-section-title text-balance font-display font-bold tracking-tight text-ink">
@@ -56,6 +57,7 @@ export default async function Team() {
             nextLabel={t("nextLabel")}
             socials={memberSocials}
             locale={locale}
+            tone={tone}
           />
         </div>
       </div>

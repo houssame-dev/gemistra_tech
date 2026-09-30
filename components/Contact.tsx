@@ -2,7 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { Check, ChevronDown, Copy, Mail, MapPin, Phone } from "lucide-react";
+import { Check, ChevronDown, Mail, MapPin, Phone } from "lucide-react";
+import type { SectionTone } from "@/lib/config";
 
 function LinkedinIcon({ size = 16 }: { size?: number }) {
   return (
@@ -53,7 +54,7 @@ type Status = "idle" | "submitting" | "success" | "server-error";
 type FieldName = "name" | "email" | "projectType" | "message";
 type FieldErrors = Partial<Record<FieldName, string>>;
 
-export default function Contact() {
+export default function Contact({ tone = "surface" }: { tone?: SectionTone }) {
   const t = useTranslations("contact");
   const tCommon = useTranslations("common");
   const contactEmail = tCommon("contactEmail");
@@ -63,13 +64,6 @@ export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
-
-  function copyEmail() {
-    navigator.clipboard.writeText(contactEmail).catch(() => {});
-    setIsCopied(true);
-    window.setTimeout(() => setIsCopied(false), 2000);
-  }
 
   function clearFieldError(field: FieldName) {
     setFieldErrors((current) => {
@@ -142,7 +136,7 @@ export default function Contact() {
     (fieldErrors[field] ? "border-red-400" : "border-border focus:border-violet");
 
   return (
-    <section id="contact" className="flex min-h-screen items-center border-t border-border bg-surface py-16 lg:py-24">
+    <section id="contact" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="type-section-title text-balance font-display font-bold tracking-tight text-ink">
@@ -157,7 +151,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="facet-border facet mx-auto mt-12 overflow-hidden bg-bg">
+        <div className={`facet-border facet mx-auto mt-12 overflow-hidden ${tone === "bg" ? "bg-surface" : "bg-bg"}`}>
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="flex flex-col border-b border-border p-6 lg:border-b-0 lg:border-e lg:p-8">
               <p className="text-sm font-medium text-ink">{t("reachUs")}</p>
@@ -169,24 +163,10 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-ink-secondary">{t("email")}</p>
-                    <div dir="ltr" className="mt-2 flex items-center gap-2">
-                      <a href={"mailto:" + contactEmail} className="min-w-0 truncate text-sm text-ink-secondary hover:text-teal focus-ring">
+                    <div dir="ltr" className="mt-2">
+                      <a href={"mailto:" + contactEmail} className="text-sm text-ink-secondary hover:text-teal focus-ring">
                         {contactEmail}
                       </a>
-                      <button
-                        type="button"
-                        onClick={copyEmail}
-                        aria-label={isCopied ? t("copied") : t("copyEmail")}
-                        title={isCopied ? t("copied") : t("copyEmail")}
-                        className={"facet-border facet-sm focus-ring flex h-11 w-11 shrink-0 items-center justify-center bg-elevated " +
-                          (isCopied ? "text-teal" : "text-ink-muted hover:text-violet")}
-                      >
-                        {isCopied ? (
-                          <Check size={18} strokeWidth={1.75} aria-hidden="true" />
-                        ) : (
-                          <Copy size={18} strokeWidth={1.75} aria-hidden="true" />
-                        )}
-                      </button>
                     </div>
                   </div>
                 </div>

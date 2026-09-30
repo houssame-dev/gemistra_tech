@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Phone, FileText, Code2, Rocket } from "lucide-react";
+import type { SectionTone } from "@/lib/config";
 
 const icons = [Phone, FileText, Code2, Rocket] as const;
 
@@ -11,12 +12,12 @@ type Step = {
   activities: string[];
 };
 
-export default async function Process() {
+export default async function Process({ tone = "bg" }: { tone?: SectionTone }) {
   const t = await getTranslations("process");
   const steps = t.raw("steps") as Step[];
 
   return (
-    <section id="process" className="flex min-h-screen items-center border-t border-border bg-bg py-16 lg:py-24">
+    <section id="process" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-medium text-teal">{t("eyebrow")}</p>
@@ -31,7 +32,7 @@ export default async function Process() {
             return (
               <div
                 key={item.step}
-                className="facet-border facet flex h-full flex-col items-center bg-surface p-6 text-center"
+                className={`facet-border facet flex h-full flex-col items-center p-6 text-center ${tone === "bg" ? "bg-surface" : "bg-bg"}`}
               >
                 <div className="flex items-center justify-center gap-3">
                   <span className="type-card-title flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-violet-soft font-display font-bold text-violet">

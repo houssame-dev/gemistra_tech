@@ -9,6 +9,8 @@
   },
   "common": {
     "brandName": "Gemistra Tech",
+    "brandFirst": "Gemistra",
+    "brandSecond": "Tech",
     "contactEmail": "contact@gemistratech.com",
     "contactPhone": "+212 600 000 000"
   },
@@ -17,7 +19,7 @@
   },
   "nav": {
     "services": "Services",
-    "whyUs": "Pourquoi Gemistra Tech",
+    "whyUs": "Pourquoi nous",
     "process": "Processus",
     "team": "Équipe",
     "work": "Réalisations",
@@ -36,6 +38,12 @@
   },
   "language": {
     "label": "Langue",
+    "openMenu": "Choisir la langue",
+    "options": {
+      "en": "English",
+      "fr": "Français",
+      "ar": "العربية"
+    },
     "en": "EN",
     "fr": "FR",
     "ar": "AR"
@@ -44,9 +52,9 @@
     "badge": "Basés au Maroc, nous construisons pour des clients partout dans le monde",
     "title": "Des logiciels taillés comme",
     "titleAccent": "une facette nette.",
-    "description": "Gemistra Tech conçoit et développe des plateformes SaaS, des apps mobiles, de l'automatisation IA et la visibilité search pour les entreprises qui veulent avancer vite sans sacrifier la qualité.",
+    "description": "Nous créons des solutions SaaS, des applications Web et mobiles, de l'automatisation par IA, des chatbots, du SEO et des solutions digitales.",
     "ctaPrimary": "Démarrer un projet",
-    "ctaSecondary": "Voir ce qu'on construit"
+    "ctaSecondary": "Découvrir"
   },
   "trustedBy": {
     "heading": "Ils nous font confiance",
@@ -257,10 +265,16 @@
     ]
   },
   "testimonials": {
-    "title": "Histoires clients, bientôt",
-    "description": "Les mots des clients pour qui nous livrons arrivent — c'est ici qu'ils trouveront leur place.",
-    "emptyTitle": "Bientôt disponible",
-    "emptyDescription": "On débute — les premiers témoignages de nos clients apparaîtront ici au fil des lancements."
+    "title": "Histoires clients",
+    "description": "Ce que nos clients disent de leur collaboration avec Gemistra Tech."
+  },
+  "testimonialData": {
+    "_placeholder": "PLACEHOLDER : remplacer cet exemple par un témoignage client approuvé.",
+    "placeholder-client": {
+      "clientName": "Nom du client",
+      "roleCompany": "Fonction · Entreprise",
+      "quote": "Un véritable témoignage client apparaîtra ici."
+    }
   },
   "work": {
     "title": "Projets qu'on a construits",
@@ -349,8 +363,6 @@
     "messageRequired": "Décrivez-nous brièvement votre projet.",
     "serverError": "Un problème est survenu de notre côté — réessayez ou écrivez-nous directement à",
     "availability": "Nous acceptons actuellement de nouveaux projets",
-    "copyEmail": "Copier l'adresse e-mail",
-    "copied": "Copié !",
     "socialOn": "Gemistra Tech sur {platform}",
     "sendAnother": "Envoyer un autre message",
     "successNote": "Vous préférez l'e-mail ? Écrivez-nous directement à"

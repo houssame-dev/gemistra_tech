@@ -7,6 +7,7 @@ import {
   Search,
   Globe,
 } from "lucide-react";
+import type { SectionTone } from "@/lib/config";
 
 const icons = [
   LayoutDashboard,
@@ -24,12 +25,12 @@ type ServiceItem = {
   deliverables: string[];
 };
 
-export default async function Services() {
+export default async function Services({ tone = "bg" }: { tone?: SectionTone }) {
   const t = await getTranslations("services");
   const items = t.raw("items") as ServiceItem[];
 
   return (
-    <section id="services" className="flex min-h-screen items-center border-t border-border bg-bg py-16 lg:py-24">
+    <section id="services" className={`flex min-h-screen items-center border-t border-border py-16 lg:py-24 ${tone === "bg" ? "bg-bg" : "bg-surface"}`}>
       <div className="container-page w-full">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-medium text-teal">{t("eyebrow")}</p>
@@ -44,7 +45,7 @@ export default async function Services() {
             return (
               <div
                 key={service.name}
-                className="facet-border facet flex h-full flex-col items-center bg-surface p-6 text-center"
+                className={`facet-border facet flex h-full flex-col items-center p-6 text-center ${tone === "bg" ? "bg-surface" : "bg-bg"}`}
               >
                 <span className="facet-sm border border-border bg-elevated px-2 py-1 text-xs font-medium text-ink-muted">
                   {service.tag}
