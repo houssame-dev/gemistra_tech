@@ -17,15 +17,16 @@ export default function Logo({
   return (
     <span dir="ltr" className={`inline-flex items-center gap-3 whitespace-nowrap ${className}`}>
       <Image
-        src="/logos/gemistra-logo.png"
+        src="/logos/gemistra-logo-color.png"
         alt=""
-        width={56}
+        width={58}
         height={48}
         className={imageClassName}
         priority
       />
-      <span className={`font-display text-xl font-bold tracking-tight text-ink lg:text-2xl ${textClassName}`}>
-        {t("brandName")}
+      <span className={`font-display text-xl font-bold tracking-tight lg:text-2xl ${textClassName}`}>
+        <span className="text-brand-navy">{t("brandFirst")}</span>{" "}
+        <span className="text-brand-cyan">{t("brandSecond")}</span>
       </span>
     </span>
   );

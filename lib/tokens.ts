@@ -9,6 +9,8 @@ export const colors = {
   violetSoft: "rgba(124, 92, 255, 0.12)",
   teal: "#22E1C9",
   tealSoft: "rgba(34, 225, 201, 0.12)",
+  brandNavy: "#014590",
+  brandCyan: "#01CCF5",
   ink: "#F5F5F7",
   inkSecondary: "#C4C6D0",
   inkMuted: "#8A8D9A",

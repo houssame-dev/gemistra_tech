@@ -3,7 +3,7 @@ import path from "node:path";
 import {chromium} from "playwright";
 
 const locales = ["en", "fr", "ar"];
-const widths = [375, 768, 1024, 1440];
+const widths = [375, 768, 1024, 1280, 1440];
 const label = process.argv[2] ?? "current";
 const baseUrl = process.env.SCREENSHOT_BASE_URL ?? "http://127.0.0.1:3005";
 const outputDir = path.resolve(".screenshots", label);
@@ -34,6 +34,23 @@ async function verifyLanguageMenu(page, locale, width) {
   await trigger.press("Enter");
   const menu = page.locator('#language-menu:visible');
   await menu.waitFor();
+
+  if (width >= 1024) {
+    const overlap = await page.evaluate(() => {
+      const panel = document.querySelector('[data-language-menu]');
+      const cta = document.querySelector('[data-navbar-cta]');
+      if (!panel || !cta) return true;
+      const panelRect = panel.getBoundingClientRect();
+      const ctaRect = cta.getBoundingClientRect();
+      return !(
+        panelRect.right <= ctaRect.left ||
+        panelRect.left >= ctaRect.right ||
+        panelRect.bottom <= ctaRect.top ||
+        panelRect.top >= ctaRect.bottom
+      );
+    });
+    if (overlap) throw new Error(`Language menu overlaps the navbar CTA for /${locale} at ${width}px`);
+  }
 
   const currentOption = menu.locator('[role="menuitemradio"][aria-checked="true"]');
   await currentOption.waitFor();
@@ -102,6 +119,21 @@ try {
 
       await assertNoOverflow(page, `/${locale}`, width);
       await verifyLanguageMenu(page, locale, width);
+
+      if (width >= 1024) {
+        await page.locator('button[aria-controls="language-menu"]:visible').click();
+        await page.screenshot({
+          path: path.join(outputDir, `${locale}-${width}-navbar-dropdown.png`),
+          clip: {x: 0, y: 0, width, height: 320}
+        });
+        await page.keyboard.press("Escape");
+      }
+
+      if (width === 1440) {
+        await page.locator("header .container-page > a").screenshot({
+          path: path.join(outputDir, `${locale}-${width}-logo-lockup.png`)
+        });
+      }
 
       await page.screenshot({
         path: path.join(outputDir, `${locale}-${width}-hero.png`),

@@ -68,7 +68,7 @@ export default function LanguageSwitcher({
 
   if (variant === "dropdown") {
     return (
-      <div ref={rootRef} className={`relative w-fit ${className}`} onKeyDown={handleMenuKeyDown}>
+      <div ref={rootRef} className={`relative z-50 w-fit ${className}`} onKeyDown={handleMenuKeyDown}>
         <button
           ref={triggerRef}
           type="button"
@@ -77,7 +77,7 @@ export default function LanguageSwitcher({
           aria-expanded={open}
           aria-controls="language-menu"
           onClick={() => setOpen((current) => !current)}
-          className="facet-border facet-sm focus-ring flex h-11 w-full items-center justify-between gap-2 bg-elevated px-4 text-sm font-medium text-ink-secondary hover:text-ink"
+          className="facet-border facet-sm focus-ring flex h-11 items-center justify-between gap-2 bg-elevated px-4 text-sm font-medium text-ink-secondary hover:text-ink"
         >
           <span>{localeLabels[locale]}</span>
           <ChevronDown
@@ -89,31 +89,34 @@ export default function LanguageSwitcher({
         </button>
 
         {open && (
-          <div
-            id="language-menu"
-            role="menu"
-            aria-label={t("label")}
-            className="facet-border facet-sm absolute right-0 top-full z-50 mt-2 w-max min-w-full bg-elevated p-2 rtl:left-0 rtl:right-auto"
-          >
-            {routing.locales.map((loc, index) => (
-              <Link
-                key={loc}
-                ref={(element) => {
-                  optionRefs.current[index] = element;
-                }}
-                href={pathname}
-                locale={loc}
-                role="menuitemradio"
-                aria-checked={loc === locale}
-                onClick={() => setOpen(false)}
-                className={`focus-ring flex min-h-11 items-center justify-between gap-6 px-3 py-2 text-sm font-medium ${
-                  loc === locale ? "text-violet" : "text-ink-secondary hover:text-ink"
-                }`}
-              >
-                <span>{t(`options.${loc}`)}</span>
-                {loc === locale && <Check size={16} strokeWidth={1.75} aria-hidden="true" />}
-              </Link>
-            ))}
+          <div className="absolute end-0 top-full z-50 mt-2 w-max min-w-full lg:mt-12 xl:mt-2">
+            <div
+              id="language-menu"
+              data-language-menu
+              role="menu"
+              aria-label={t("label")}
+              className="facet-border facet-sm w-full bg-elevated p-2"
+            >
+              {routing.locales.map((loc, index) => (
+                <Link
+                  key={loc}
+                  ref={(element) => {
+                    optionRefs.current[index] = element;
+                  }}
+                  href={pathname}
+                  locale={loc}
+                  role="menuitemradio"
+                  aria-checked={loc === locale}
+                  onClick={() => setOpen(false)}
+                  className={`focus-ring flex min-h-11 items-center justify-between gap-6 px-3 py-2 text-sm font-medium ${
+                    loc === locale ? "text-violet" : "text-ink-secondary hover:text-ink"
+                  }`}
+                >
+                  <span>{t(`options.${loc}`)}</span>
+                  {loc === locale && <Check size={16} strokeWidth={1.75} aria-hidden="true" />}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

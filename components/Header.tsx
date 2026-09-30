@@ -277,6 +277,7 @@ export default function Header() {
 
           <Link
             href="/#contact"
+            data-navbar-cta
             className="hidden h-10 shrink-0 facet-sm items-center whitespace-nowrap bg-violet px-6 text-base font-medium leading-none text-white hover:bg-violet-dim focus-ring lg:inline-flex"
           >
             {t("startProject")}

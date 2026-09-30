@@ -23,6 +23,8 @@ const config: Config = {
           DEFAULT: colors.teal,
           soft: colors.tealSoft,
         },
+        "brand-navy": colors.brandNavy,
+        "brand-cyan": colors.brandCyan,
         ink: {
           DEFAULT: colors.ink,
           secondary: colors.inkSecondary,
