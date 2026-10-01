@@ -275,14 +275,6 @@ export default function Header() {
         <div className="flex items-center gap-3 justify-self-end lg:flex-col lg:items-end lg:gap-1 xl:flex-row xl:items-center xl:gap-3">
           <LanguageSwitcher variant="dropdown" compact className="hidden lg:block" />
 
-          <Link
-            href="/#contact"
-            data-navbar-cta
-            className="hidden h-10 shrink-0 facet-sm items-center whitespace-nowrap bg-violet px-6 text-base font-medium leading-none text-white hover:bg-violet-dim focus-ring lg:inline-flex"
-          >
-            {t("startProject")}
-          </Link>
-
           <button
             ref={menuToggleRef}
             type="button"

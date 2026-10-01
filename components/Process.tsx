@@ -54,7 +54,7 @@ export default async function Process({ tone = "bg" }: { tone?: SectionTone }) {
 
                 <ul className="mt-4 flex-1 space-y-2 text-sm text-ink-secondary">
                   {item.activities.map((activity) => (
-                    <li key={activity} className="flex items-start justify-center gap-2 text-center">
+                    <li key={activity} className="flex items-start justify-start gap-2 text-start">
                       <span
                         aria-hidden="true"
                         className="mt-2 h-1.5 w-1.5 shrink-0 bg-violet"

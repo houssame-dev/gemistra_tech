@@ -10,10 +10,10 @@ export type Project = {
 // Add one structural entry here and one matching block in every message file.
 export const projects: Project[] = [
   {
-    slug: "example-project",
+    slug: "Madrasio",
     year: "2026",
-    messageKey: "example-project",
-    statusKey: "ComingSoon",
+    messageKey: "madrasio",
+    statusKey: "InProgress",
   },
 ];
 

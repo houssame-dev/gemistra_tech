@@ -82,7 +82,7 @@ export default async function Footer() {
         </div>
 
         <nav aria-label={t("navLabel")}>
-          <p className="type-small font-medium text-ink">{t("quickLinks")}</p>
+          <p className="type-small font-medium text-ink italic uppercase">{t("quickLinks")}</p>
           <ul className="type-small mt-4 space-y-2 text-ink-secondary">
             {links.map((link) => (
               <li key={link.href}>
@@ -93,7 +93,7 @@ export default async function Footer() {
         </nav>
 
         <div>
-          <p className="type-small font-medium text-ink">{t("services")}</p>
+          <p className="type-small font-medium text-ink italic uppercase">{t("services")}</p>
           <ul className="type-small mt-4 space-y-2 text-ink-secondary">
             {services.map((service) => (
               <li key={service.name}>
@@ -104,13 +104,17 @@ export default async function Footer() {
         </div>
 
         <div>
-          <p className="type-small font-medium text-ink">{t("contact")}</p>
+          <p className="type-small font-medium text-ink italic uppercase">{t("contact")}</p>
           <a dir="ltr" href={"mailto:" + contactEmail}
             className="type-small mt-4 block text-ink-secondary hover:text-teal focus-ring">
             {contactEmail}
           </a>
+           <a dir="ltr" href={"tel:" + tCommon("contactPhone")}
+            className="type-small mt-2 block text-ink-secondary hover:text-teal focus-ring">
+            {tCommon("contactPhone")}
+          </a>
 
-          <p className="type-small mt-6 font-medium text-ink">{tNav("followUs")}</p>
+          <p className="type-small mt-6 font-medium text-ink italic uppercase">{tNav("followUs")}</p>
           <div className="mt-3 flex gap-2">
             {socials.map(({ Icon, href, platform }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer"
@@ -121,7 +125,7 @@ export default async function Footer() {
             ))}
           </div>
 
-          <p className="type-small mt-6 font-medium text-ink">{tLanguage("label")}</p>
+          <p className="type-small mt-6 font-medium text-ink italic uppercase">{tLanguage("label")}</p>
           <LanguageSwitcher className="mt-3" />
         </div>
       </div>
@@ -134,8 +138,13 @@ export default async function Footer() {
               <li>
                 <Link href="/privacy" className="focus-ring hover:text-ink">{tNav("privacyPolicy")}</Link>
               </li>
+              |
               <li>
                 <Link href="/terms" className="focus-ring hover:text-ink">{tNav("termsOfService")}</Link>
+              </li>
+              |
+              <li>
+                <Link href="/cookies" className="focus-ring hover:text-ink">{tNav("cookiePolicy")}</Link>
               </li>
             </ul>
           </nav>

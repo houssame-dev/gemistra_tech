@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "title": "Gemistra Tech — SaaS, mobile apps, AI automation and SEO",
-    "description": "Gemistra Tech builds SaaS platforms, mobile apps, AI automation and chatbots, and SEO for businesses in Morocco and beyond.",
-    "ogDescription": "SaaS, mobile apps, AI automation and SEO — built from Morocco, for the world.",
-    "schemaCity": "Casablanca",
+    "title": "Gemistra Tech — SaaS, Web & Mobile apps, AI automation and SEO",
+    "description": "Gemistra Tech builds SaaS platforms, Web & Mobile apps, AI automation and chatbots, and SEO for businesses in Morocco and beyond.",
+    "ogDescription": "SaaS, Web & Mobile apps, AI automation and SEO — built from Morocco, for the world.",
+    "schemaCity": "Mohammedia",
     "schemaRegion": "Casablanca-Settat",
     "schemaContactType": "Customer service"
   },
@@ -12,7 +12,7 @@
     "brandFirst": "Gemistra",
     "brandSecond": "Tech",
     "contactEmail": "contact@gemistratech.com",
-    "contactPhone": "+212 600 000 000"
+    "contactPhone": "+212 607 991 544"
   },
   "accessibility": {
     "skipToContent": "Skip to main content"
@@ -33,6 +33,7 @@
     "followUs": "Follow us",
     "privacyPolicy": "Privacy policy",
     "termsOfService": "Terms of service",
+    "cookiePolicy": "Cookie policy",
     "backToTop": "Back to top",
     "socialOn": "Gemistra Tech on {platform}"
   },
@@ -151,6 +152,8 @@
     "_placeholder": "PLACEHOLDER: Confirm the 30-day support period before launch.",
     "points": [
       {
+        "stat": "Direct",
+        "statLabel": "communication",
         "title": "You talk to the people building it",
         "description": "No account managers relaying messages. You work directly with the founder and the engineers on your project — from kickoff through launch.",
         "details": [
@@ -160,6 +163,8 @@
         ]
       },
       {
+        "stat": "3–12 weeks",
+        "statLabel": "typical build time",
         "title": "A modern stack, not a bloated one",
         "description": "We pick tools for what your product actually needs — fast to build, cheap to run, easy to hand off when your team grows.",
         "details": [
@@ -385,7 +390,7 @@
     "successNote": "Prefer email? Reach us directly at"
   },
   "footer": {
-    "tagline": "Casablanca, Morocco — working with clients everywhere.",
+    "tagline": "Mohammedia, Morocco — working with clients everywhere.",
     "quickLinks": "Quick links",
     "services": "Services",
     "contact": "Contact",
@@ -407,11 +412,11 @@
     "ctaButton": "Start a project"
   },
   "projectData": {
-    "example-project": {
-      "name": "Example project",
+    "madrasio": {
+      "name": "Madrasio",
       "category": "SaaS",
-      "summary": "A short one-line summary of what this project is and who it's for.",
-      "description": "Replace this with a real case study once your first project ships: the problem, what Gemistra Tech built, the stack, and the outcome. Until then this entry shows how the template renders.",
+      "summary": "A modern, multilingual, multi-tenant school management SaaS designed for private schools.",
+      "description": "Madrasio is a school management platform built for private schools that need a reliable and modern way to manage their academic, administrative, and communication workflows from a single system. The platform is designed around a modular monolith architecture, with strong domain boundaries, multi-tenant isolation, role-based authorization, historical academic integrity, and a web-first experience that can support future mobile clients.",
       "services": ["SaaS development", "SEO"]
     }
   },

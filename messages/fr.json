@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "title": "Gemistra Tech — SaaS, apps mobiles, automatisation IA et SEO",
+    "title": "Gemistra Tech — SaaS, applications web et mobiles, automatisation par IA et SEO",
     "description": "Gemistra Tech conçoit et développe des plateformes SaaS, des apps mobiles, de l'automatisation IA, des chatbots et du SEO pour les entreprises au Maroc et ailleurs.",
-    "ogDescription": "SaaS, apps mobiles, automatisation IA et SEO — construit depuis le Maroc, pour le monde.",
-    "schemaCity": "Casablanca",
+    "ogDescription": "SaaS, applications web et mobiles, automatisation par IA et SEO — construit depuis le Maroc, pour le monde.",
+    "schemaCity": "Mohammedia",
     "schemaRegion": "Casablanca-Settat",
     "schemaContactType": "Service client"
   },
@@ -12,7 +12,7 @@
     "brandFirst": "Gemistra",
     "brandSecond": "Tech",
     "contactEmail": "contact@gemistratech.com",
-    "contactPhone": "+212 600 000 000"
+    "contactPhone": "+212 607 991 544"
   },
   "accessibility": {
     "skipToContent": "Aller au contenu principal"
@@ -34,6 +34,7 @@
     "backToTop": "Haut de page",
     "privacyPolicy": "Politique de confidentialité",
     "termsOfService": "Conditions d'utilisation",
+    "cookiePolicy": "Politique de cookies",
     "socialOn": "Gemistra Tech sur {platform}"
   },
   "language": {
@@ -134,6 +135,8 @@
     "_placeholder": "PLACEHOLDER : confirmer la période de support de 30 jours avant le lancement.",
     "points": [
       {
+        "stat": "Direct",
+        "statLabel": "communication",
         "title": "Vous parlez aux personnes qui construisent",
         "description": "Pas d'account managers qui relaient les messages. Vous travaillez directement avec le fondateur et les ingénieurs — du kickoff au lancement.",
         "details": [
@@ -143,6 +146,8 @@
         ]
       },
       {
+        "stat": "3–12 semaines",
+        "statLabel": "durée typique de construction",
         "title": "Une stack moderne, pas surchargée",
         "description": "On choisit les outils adaptés à votre produit — rapides à construire, économiques à faire tourner, faciles à reprendre quand votre équipe grandit.",
         "details": [
@@ -368,7 +373,7 @@
     "successNote": "Vous préférez l'e-mail ? Écrivez-nous directement à"
   },
   "footer": {
-    "tagline": "Casablanca, Maroc — on travaille avec des clients partout.",
+    "tagline": "Mohammedia, Maroc — on travaille avec des clients partout.",
     "quickLinks": "Liens rapides",
     "services": "Services",
     "contact": "Contact",
@@ -390,11 +395,11 @@
     "ctaButton": "Démarrer un projet"
   },
   "projectData": {
-    "example-project": {
-      "name": "Projet exemple",
+    "madrasio": {
+      "name": "Madrasio",
       "category": "SaaS",
-      "summary": "Un bref résumé du projet et du public auquel il s'adresse.",
-      "description": "Remplacez ce texte par une véritable étude de cas dès que votre premier projet sera en ligne : le problème, la solution conçue par Gemistra Tech, les technologies utilisées et les résultats. En attendant, cette entrée montre le rendu du modèle.",
+      "summary": "Une solution SaaS moderne, multilingue et multi-locataire de gestion scolaire, conçue pour les écoles privées.",
+      "description": "Madrasio est une plateforme de gestion scolaire conçue pour les établissements privés souhaitant gérer de manière fiable et moderne leurs flux de travail pédagogiques, administratifs et de communication au sein d'un système unique. La plateforme repose sur une architecture de type « monolithe modulaire » et intègre des délimitations claires entre les domaines fonctionnels, une isolation multi-locataire, une gestion des autorisations basée sur les rôles, la préservation de l'historique et de l'intégrité des données scolaires, ainsi qu'une expérience nativement web capable de prendre en charge de futures applications mobiles.",
       "services": ["Développement SaaS", "SEO"]
     }
   },
