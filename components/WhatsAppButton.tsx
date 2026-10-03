@@ -3,8 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useMobileMenu } from "@/components/MobileMenuContext";
 
-// PLACEHOLDER: replace 212600000000 with the real WhatsApp business number before launch.
-const WHATSAPP_NUMBER = "212600000000";
+const WHATSAPP_NUMBER = "+212607991544";
 
 function WhatsAppIcon({ size = 22 }: { size?: number }) {
   return (
