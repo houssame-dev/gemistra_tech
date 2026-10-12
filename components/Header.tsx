@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { createPortal } from "react-dom";
 import { Link, usePathname } from "@/i18n/navigation";
 import { ArrowUp, Mail, Menu, Phone, X } from "lucide-react";
@@ -56,6 +56,8 @@ const socials = [
 ];
 
 export default function Header() {
+  const locale = useLocale();
+  const [mounted, setMounted] = useState(false);
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
   const contactEmail = tCommon("contactEmail");
@@ -69,6 +71,8 @@ export default function Header() {
   const menuRef = useRef<HTMLElement>(null);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const menuWasOpenRef = useRef(false);
+
+  useEffect(() => setMounted(true), []);
 
   const links = [
     { href: "/#services" as const, section: "services", label: t("services") },
@@ -184,7 +188,7 @@ export default function Header() {
 
   useEffect(() => {
     close();
-  }, [pathname, close]);
+  }, [pathname, locale, close]);
 
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
@@ -289,14 +293,23 @@ export default function Header() {
         </div>
       </div>
 
-      {open && (
+      {mounted && open && createPortal(
         <nav
           ref={menuRef}
           id="mobile-nav"
+          dir={locale === "ar" ? "rtl" : "ltr"}
           aria-label={t("mobileNav")}
-          className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto border-t border-border bg-bg lg:hidden"
+          className="fixed inset-0 z-mobile-menu flex flex-col bg-bg lg:hidden"
         >
-          <div className="container-page flex flex-1 flex-col py-6">
+          <div className="container-page flex h-16 w-full shrink-0 items-center justify-between border-b border-border">
+            <Link href="/" onClick={close} className="focus-ring leading-none"><Logo /></Link>
+            <button type="button" onClick={close} aria-label={t("closeMenu")}
+              className="facet-sm focus-ring flex h-11 w-11 items-center justify-center text-ink-secondary hover:text-ink">
+              <X size={20} strokeWidth={1.75} aria-hidden="true" />
+            </button>
+          </div>
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+          <div className="container-page flex min-h-full flex-col py-6">
             <LanguageSwitcher variant="dropdown" className="mb-6 self-start" />
 
             <div className="flex flex-col gap-1">
@@ -372,7 +385,9 @@ export default function Header() {
               {t("startProject")}
             </Link>
           </div>
-        </nav>
+          </div>
+        </nav>,
+        document.body
       )}
 
       {showScrollToTop && !open && typeof document !== "undefined" && createPortal(

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        "mobile-menu": "60",
+      },
       colors: {
         bg: colors.bg,
         surface: colors.surface,
